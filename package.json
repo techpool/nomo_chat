@@ -1,0 +1,14 @@
+{
+  "name": "nomo_chat",
+  "version": "1.0.0",
+  "description": "A simple chat app using node, mongo and socket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Suryadeep Pal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
