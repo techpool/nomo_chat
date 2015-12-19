@@ -17,8 +17,8 @@ require('./lib/socketEvents/socketEvents.js')(io);
 
 /* Models */
 
-Users = require('./models/Users.js');
-Messages = require('./models/Messages.js');
+// Users = require('./models/Users.js');
+// Messages = require('./models/Messages.js');
 
 http.listen(3000, function(){
   console.log('listening on *:3000');
