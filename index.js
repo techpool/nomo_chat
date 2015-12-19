@@ -20,6 +20,6 @@ require('./lib/socketEvents/socketEvents.js')(io);
 // Users = require('./models/Users.js');
 // Messages = require('./models/Messages.js');
 
-http.listen(3000, function(){
+http.listen(process.env.PORT || 3000, function(){
   console.log('listening on *:3000');
 });
