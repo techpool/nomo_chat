@@ -1,7 +1,9 @@
 module.exports = function(app, mongoose){
 
     app.set('db', 'mongodb://localhost:27017/nomochat');
-    app.set('views', './public/views')
+    app.set('views', './views');
+    app.set('view engine', 'jade');
+
 
     mongoose.connect(app.get('db'));
     var db = mongoose.connection;
