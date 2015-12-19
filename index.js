@@ -3,11 +3,6 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose');
 
-io.configure(function () {
-  io.set("transports", ["xhr-polling"]);
-  io.set("polling duration", 10);
-}); 
-
 /* Configuration */
 
 require('./config/configuration.js')(app, mongoose);
