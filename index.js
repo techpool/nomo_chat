@@ -1,11 +1,20 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose');
 
+app.use(express.static('public'));
+
 /* Configuration */
 
 require('./config/configuration.js')(app, mongoose);
+
+
+/* Models */
+
+Users = require('./models/Users.js');
+Messages = require('./models/Messages.js');
 
 /* Routes */
 
@@ -15,10 +24,6 @@ require('./routes/chatPage.js')(app);
 
 require('./lib/socketEvents/socketEvents.js')(io);
 
-/* Models */
-
-// Users = require('./models/Users.js');
-// Messages = require('./models/Messages.js');
 
 http.listen(process.env.PORT || 3000, function(){
   console.log('listening on :' + process.env.PORT);
