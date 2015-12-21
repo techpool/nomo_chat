@@ -34,15 +34,16 @@ html
           });  
           
       });
-      
     body
-        ul#messages
+        .container
+            ul#messages
         .row
             form.col.s12
                 .row
-                    .input-field.col.s12
+                    .input-field.col.s10
                         input#m.validate(type='text', autocomplete='off')
                         label(for='m') Message
+                    .col.s2
                         button.btn-large.waves-effect.waves-light(type='submit', name='action')
                           | Send
                           i.material-icons.right send
