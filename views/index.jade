@@ -14,6 +14,12 @@ html
     script(src='https://cdn.socket.io/socket.io-1.3.7.js')
     script.
       var socket = io();
+      
+      function updateScroll(){
+          var element = document.getElementById("messages");
+          element.scrollTop = element.scrollHeight;
+      }
+
       $(document).ready(function(){
           $("form").submit(function(){
               socket.emit('chat_message', $('#m').val());
@@ -24,6 +30,7 @@ html
           socket.on('chat_message', function(msg){
             console.log('here');
             $('#messages').append($('<li>').text(msg));
+            updateScroll();
           });  
           
       });

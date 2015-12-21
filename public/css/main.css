@@ -12,9 +12,15 @@ ul{
 }
 
 form{
+    height: 30vh;
     position: fixed;
 }
 
 html{
     margin: 0px
+}
+
+ul{
+    height: 70vh;
+    overflow-y:auto;
 }
