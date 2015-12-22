@@ -1,0 +1,24 @@
+html
+    head
+      title Socket.IO chat
+      script(src='https://code.jquery.com/jquery-1.11.1.js')
+
+      // Compiled and minified CSS
+      link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css')
+      link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+      // Compiled and minified JavaScript
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js')
+      
+      link(rel='stylesheet', href='/css/main.css')
+    body
+        .row.reg
+            form.col.s4
+                .row
+                    .input-field.col.s12
+                        i.material-icons.prefix account_circle
+                        input#icon_prefix.validate(type='text')
+                        label(for='icon_prefix') First Name
+                        button.btn.waves-effect.waves-light(type='submit', name='action')
+                            | Submit
+                            i.material-icons.right send
+                    
