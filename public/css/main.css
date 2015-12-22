@@ -2,21 +2,18 @@
     width: 100%;
 }
 
-.btn-large{
-	margin: 0px;
-	bottom: 0;
-}
-
 form{
     height: 15vh;
     position: fixed;
+
 }
 
-html{
-    margin: 0px
-}
 
 ul{
-    height: 85vh;
+    height: 80vh;
     overflow-y:auto;
+}
+
+.reg{
+    margin: 35vh 35vw;
 }
