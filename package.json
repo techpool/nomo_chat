@@ -9,6 +9,7 @@
   "author": "Suryadeep Pal",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "jade": "^1.11.0",
     "mongoose": "^4.3.2",
