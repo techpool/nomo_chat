@@ -2,19 +2,27 @@ var mongoose = require('mongoose');
 
 var user = mongoose.Schema({
     name: {
-        type:'String',
+        type: 'String',
+        required: true
+    },
+    email: {
+        type: 'String',
+        required: true
+    },
+    password: {
+        type: 'String',
         required: true
     },
     messageCount: {
-        type:'String',
+        type: 'String',
         required: true
     },
     lastLogin: {
-        type:Number,
+        type: Number,
         required: true
     },
     regTime: {
-        type:'String',
+        type: 'String',
         required: true
     }
 });
