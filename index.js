@@ -19,6 +19,8 @@ Messages = require('./models/Messages.js');
 /* Routes */
 
 require('./routes/chatPage.js')(app);
+require('./routes/login.js')(app);
+require('./routes/register.js')(app);
 
 /* Socket events */
 
