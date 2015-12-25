@@ -19,7 +19,7 @@ var user = mongoose.Schema({
         required: true
     },
     lastLogin: {
-        type: Number,
+        type: Date,
         required: true
     },
     regTime: {
