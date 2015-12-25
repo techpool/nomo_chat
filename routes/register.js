@@ -9,18 +9,39 @@ module.exports = function (app) {
 
     app.post('/register', function (req, res) {
         var regData = req.body;
-        var newUser = new Users({
-            name: regData.name,
-            email: regData.email,
-            password: regData.password
-        });
 
-        newUser.save(function (err, saveObj) {
-            if (err) {
-                res.send('You are one of us now!');
+        //Checking whether the user is already registered
+        Users.findOne({
+            email: regData.email
+        }).exec(function (err, user) {
+            if (user == undefined) {
+
+                //Incase no users are there create new user object
+                var newUser = new Users({
+                    username: regData.username,
+                    email: regData.email,
+                    regTime: Date.now(),
+                    lastLogin: Date.now(),
+                    messageCount: 0,
+                    password: regData.password
+                });
+
+                // Save the user in the database
+                newUser.save(function (err, saveObj) {
+                    if (err) {
+
+                        //Incase of errors
+                        console.log(err);
+                        res.send('Something is seriously wrong. Please call the admins.');
+                    } else {
+                        //When everything is fine
+                        res.send('You are one of us now!');
+                    }
+                });
             } else {
-                res.send('Something is seriously wrong. Please call the admins.');
+                //If user is already registered
+                res.send('You are already registered.');
             }
-        })
-    })
+        });
+    });
 }
