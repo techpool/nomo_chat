@@ -10,7 +10,6 @@ app.use(express.static('public'));
 
 require('./config/configuration.js')(app, mongoose);
 
-
 /* Models */
 
 Users = require('./models/Users.js');
@@ -25,7 +24,6 @@ require('./routes/register.js')(app);
 /* Socket events */
 
 require('./lib/socketEvents/socketEvents.js')(io);
-
 
 http.listen(process.env.PORT || 3000, function(){
   console.log('listening on :' + process.env.PORT);
